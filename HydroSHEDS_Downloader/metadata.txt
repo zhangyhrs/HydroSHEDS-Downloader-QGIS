@@ -1,0 +1,16 @@
+[general]
+name=HydroSHEDS Downloader
+qgisMinimumVersion=3.28
+qgisMaximumVersion=3.99
+version=2.1.2
+author=zhangyhrs
+email=zhangyhcumt@163.com
+description=Download HydroSHEDS data by study area, add common basemaps, and display the official-style 10x10 degree HydroSHEDS tile grid.
+about=HydroSHEDS Downloader is a lightweight QGIS plugin for selecting a study area, resolving official HydroSHEDS data, clipping selected products, adding common basemaps, and displaying the HydroSHEDS 10x10 degree tile grid. The interface follows native QGIS styling and supports collapsible sections.
+category=Raster
+icon=icon.svg
+homepage=https://github.com/zhangyhrs/HydroSHEDS-Downloader-QGIS
+repository=https://github.com/zhangyhrs/HydroSHEDS-Downloader-QGIS
+tracker=https://github.com/zhangyhrs/HydroSHEDS-Downloader-QGIS/issues
+experimental=True
+deprecated=False
