@@ -2,14 +2,16 @@
 
 # HydroSHEDS Downloader for QGIS
 
-**Download and clip HydroSHEDS data directly by study area in QGIS**
+**Download and clip HydroSHEDS data by study area directly in QGIS**
 
 [**🇺🇸 English**](./README.md) · [🇨🇳 中文](./README_CN.md)
 
 <img src="https://img.shields.io/badge/QGIS-3.28%2B-589632?style=flat-square&logo=qgis&logoColor=white" />
-<img src="https://img.shields.io/badge/Version-2.1.2-1565C0?style=flat-square" />
+<img src="https://img.shields.io/badge/Version-1.0.1-1565C0?style=flat-square" />
 <img src="https://img.shields.io/badge/HydroSHEDS-v2-00838F?style=flat-square" />
 <img src="https://img.shields.io/badge/Python-PyQGIS-3776AB?style=flat-square&logo=python&logoColor=white" />
+
+[![QGIS Plugins](https://img.shields.io/badge/QGIS_Plugins-Official_Page-589632?style=flat-square&logo=qgis&logoColor=white)](https://plugins.qgis.org/plugins/HydroSHEDS_Downloader/)
 
 </div>
 
@@ -17,15 +19,15 @@
 
 ## Overview
 
-**HydroSHEDS Downloader** is a lightweight QGIS plugin for retrieving HydroSHEDS products by a user-defined study area. It reduces repetitive work in identifying data regions, locating HydroSHEDS tiles, downloading source products, clipping them to the target extent, and loading results back into QGIS.
+**HydroSHEDS Downloader** is a lightweight QGIS plugin for retrieving and clipping HydroSHEDS hydrological data by a user-defined study area. It reduces repetitive work in identifying data regions, locating HydroSHEDS tiles, accessing official products, clipping outputs, and loading results back into QGIS.
 
 The plugin follows the native QGIS interface style and supports the current map extent, an interactively drawn rectangle, polygon layers, and external SHP/GPKG/GeoJSON files as study areas.
 
 ## Features
 
-- Current map extent, drawn rectangle, polygon layer, or external vector file as study area.
+- Current map extent, drawn rectangle, polygon layer, or external polygon file as study area.
 - HydroSHEDS 10° × 10° grid and tile ID display.
-- HydroSHEDS v2 regional recognition and direct DIR/ACC access for the current Americas release.
+- HydroSHEDS v2 regional recognition and official data access where available.
 - Esri World Imagery and multiple OpenStreetMap-based contextual basemaps.
 - Automatic clipping and optional loading of outputs back into QGIS.
 - Collapsible sections using the native QGIS/Qt visual style.
@@ -33,9 +35,9 @@ The plugin follows the native QGIS interface style and supports the current map 
 
 ## HydroSHEDS v2
 
-HydroSHEDS v2 is being released progressively by region. As of September 2026, the first official v2 release covers North America and South America. The plugin therefore checks regional availability instead of treating v2 as a completed global replacement for HydroSHEDS v1.1.
+HydroSHEDS v2 is being released progressively by region. The plugin checks regional and product availability instead of treating v2 as a completed global replacement for HydroSHEDS v1.1.
 
-For v2 DIR and ACC in the Americas, the plugin uses the official DLR EOC continental GeoTIFF resources through GDAL remote access and reads only the requested study extent where supported.
+For supported v2 raster products, the plugin uses official HydroSHEDS/DLR EOC resources and reads the requested study extent through QGIS/GDAL capabilities where applicable.
 
 ## Source Code
 
@@ -46,18 +48,32 @@ HydroSHEDS_Downloader/
 ├─ __init__.py
 ├─ plugin.py
 ├─ metadata.txt
-└─ icon.svg
+├─ icon.png
+├─ README.md
+├─ README_CN.md
+├─ CHANGELOG.md
+└─ LICENSE
 ```
 
 ## Installation
+
+### QGIS Plugin Repository
+
+Install directly from **QGIS → Plugins → Manage and Install Plugins**, then search for **HydroSHEDS Downloader**.
+
+Official plugin page: https://plugins.qgis.org/plugins/HydroSHEDS_Downloader/
+
+### Manual installation
 
 Clone or download this repository, package the `HydroSHEDS_Downloader` folder as a ZIP, then open **QGIS → Plugins → Manage and Install Plugins → Install from ZIP**.
 
 ## Links
 
+- QGIS Plugin Repository: https://plugins.qgis.org/plugins/HydroSHEDS_Downloader/
 - HydroSHEDS: https://www.hydrosheds.org/
 - HydroSHEDS v2 downloads: https://www.hydrosheds.org/downloads-core-data-v2
-- Repository: https://github.com/zhangyhrs/HydroSHEDS-Downloader-QGIS
+- GitHub repository: https://github.com/zhangyhrs/HydroSHEDS-Downloader-QGIS
+- Issues: https://github.com/zhangyhrs/HydroSHEDS-Downloader-QGIS/issues
 
 ---
 
